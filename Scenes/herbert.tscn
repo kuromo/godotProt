@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfbfp1t4pmei2"]
+
+[ext_resource type="Texture2D" uid="uid://krcellqbdwj2" path="res://Tiles/realmGods.png" id="1_bvt1x"]
+[ext_resource type="Script" path="res://Scenes/herbert.gd" id="1_ptl6i"]
+[ext_resource type="Texture2D" uid="uid://2fnxpweifpnq" path="res://Tiles/hpBarBG.png" id="3_d3e8n"]
+[ext_resource type="Texture2D" uid="uid://otnywl6g2kw7" path="res://Tiles/hpBarArt.png" id="4_o33ag"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1cje"]
+radius = 7.0
+
+[node name="herbert" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_ptl6i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bvt1x")
+hframes = 7
+vframes = 24
+frame = 35
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w1cje")
+
+[node name="HPBar" type="TextureProgressBar" parent="."]
+offset_left = -3.0
+offset_top = -9.0
+offset_right = 3.0
+offset_bottom = -8.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_d3e8n")
+texture_over = ExtResource("4_o33ag")
+texture_progress = ExtResource("3_d3e8n")
+tint_under = Color(0.054902, 0.054902, 0.054902, 0.737255)
+tint_over = Color(0.764706, 0.666667, 0, 0.921569)
+tint_progress = Color(0.160784, 0.678431, 0, 0.780392)

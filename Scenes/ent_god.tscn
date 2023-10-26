@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://mtawks4os443"]
+
+[ext_resource type="Texture2D" uid="uid://krcellqbdwj2" path="res://Tiles/realmGods.png" id="1_wtvvv"]
+[ext_resource type="Script" path="res://Scenes/ent_god.gd" id="1_wukdr"]
+[ext_resource type="Script" path="res://Scenes/components/health_component.gd" id="2_15n4o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5vud"]
+radius = 8.0
+
+[node name="entGod" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_wukdr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wtvvv")
+hframes = 7
+vframes = 24
+frame = 28
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h5vud")
+
+[node name="healthComponent" type="Node2D" parent="."]
+script = ExtResource("2_15n4o")
