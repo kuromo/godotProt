@@ -1122,7 +1122,7 @@ position = Vector2(149, 129)
 ignore_rotation = false
 
 [node name="herbert" parent="." instance=ExtResource("5_4yket")]
-position = Vector2(190, 50)
+position = Vector2(385, -78)
 
 [node name="entGod" parent="." instance=ExtResource("6_h7irh")]
 position = Vector2(202, 52)

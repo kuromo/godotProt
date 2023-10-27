@@ -10,6 +10,7 @@ radius = 7.0
 
 [node name="herbert" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_ptl6i")
+rotaSpeed = 40
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bvt1x")
@@ -25,3 +26,10 @@ script = ExtResource("4_il1ci")
 maxHP = 800
 
 [node name="HPBar" parent="." instance=ExtResource("3_anp5y")]
+
+[node name="shotTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Rotator" type="Node2D" parent="."]
+
+[connection signal="timeout" from="shotTimer" to="." method="_on_shot_timer_timeout"]
