@@ -9,8 +9,13 @@
 radius = 7.0
 
 [node name="herbert" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 256
+collision_mask = 257
 script = ExtResource("1_ptl6i")
-rotaSpeed = 40
+rof = 20.0
+projSpawnPoints = 1
+rotaSpeed = 36
+directionChangeInterval = 99999
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bvt1x")
