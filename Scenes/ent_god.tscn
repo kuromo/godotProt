@@ -24,7 +24,7 @@ shape = SubResource("CircleShape2D_h5vud")
 
 [node name="healthComponent" type="Node2D" parent="."]
 script = ExtResource("2_15n4o")
-maxHP = 800
+maxHP = 1200
 
 [node name="HPBar" type="TextureProgressBar" parent="."]
 offset_left = -3.0
