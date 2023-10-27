@@ -3,8 +3,8 @@ extends Node2D
 class_name ProjectileSpawner
 
 
-# requiers two child nodes, no config needed on those:
-@export var shotTimer : Timer
+# requiers two child nodes:
+@export var shotTimer : Timer # timers timeout event needs to be connected to the projectileSpawners instance
 @export var rotator : Node2D
 
 const projectile = preload("res://Scenes/enemy_projectile.tscn")
@@ -52,7 +52,7 @@ func _physics_process(delta):
 	rotator.rotation_degrees = fmod(newRota, 360)
 
 
-func _on_shot_timer_timeout():
+func _on_timer_timeout():
 	for r in rotator.get_children():
 		var proj = projectile.instantiate()
 		get_tree().root.get_child(0).add_child(proj)

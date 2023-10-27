@@ -40,12 +40,12 @@ script = ExtResource("4_0sgwa")
 
 [node name="ProjectileSpawner" type="Node2D" parent="." node_paths=PackedStringArray("shotTimer", "rotator")]
 script = ExtResource("7_x42li")
-shotTimer = NodePath("shotTimer")
+shotTimer = NodePath("Timer")
 rotator = NodePath("Node2D")
 rotaSpeed = 0
 
-[node name="shotTimer" type="Timer" parent="ProjectileSpawner"]
+[node name="Timer" type="Timer" parent="ProjectileSpawner"]
 
 [node name="Node2D" type="Node2D" parent="ProjectileSpawner"]
 
-[connection signal="timeout" from="ProjectileSpawner/shotTimer" to="ProjectileSpawner" method="_on_shot_timer_timeout"]
+[connection signal="timeout" from="ProjectileSpawner/Timer" to="ProjectileSpawner" method="_on_timer_timeout"]
