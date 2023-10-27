@@ -20,13 +20,19 @@ func _process(delta):
 	
 func damage(dmg):
 	currHP -= dmg
+	percentHP = int((float(currHP) / maxHP) * 100)
 	print("healtctrl dmg: " + str(dmg) + " hp after:" + str(currHP))
+	#update hp bar
+	var hpBar = owner.get_node_or_null("HPBar")
+	if(hpBar):
+		hpBar.update(percentHP)
+		
 	if(currHP <= 0):
 		owner.onDeath()
 
 	
-func updateHPBar():
-	percentHP = int((float(currHP) / maxHP) * 100)
+#func updateHPBar():
+#	percentHP = int((float(currHP) / maxHP) * 100)
 #	hpBar.value = percentHP
 #
 #	if(percentHP >= 60):

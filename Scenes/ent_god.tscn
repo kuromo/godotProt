@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://mtawks4os443"]
+[gd_scene load_steps=8 format=3 uid="uid://mtawks4os443"]
 
 [ext_resource type="Texture2D" uid="uid://krcellqbdwj2" path="res://Tiles/realmGods.png" id="1_wtvvv"]
 [ext_resource type="Script" path="res://Scenes/ent_god.gd" id="1_wukdr"]
 [ext_resource type="Script" path="res://Scenes/components/health_component.gd" id="2_15n4o"]
+[ext_resource type="Script" path="res://Scenes/hp_bar.gd" id="4_0sgwa"]
+[ext_resource type="Texture2D" uid="uid://2fnxpweifpnq" path="res://Tiles/hpBarBG.png" id="4_ddf2w"]
+[ext_resource type="Texture2D" uid="uid://otnywl6g2kw7" path="res://Tiles/hpBarArt.png" id="5_xx30t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5vud"]
 radius = 8.0
@@ -21,3 +24,15 @@ shape = SubResource("CircleShape2D_h5vud")
 
 [node name="healthComponent" type="Node2D" parent="."]
 script = ExtResource("2_15n4o")
+maxHP = 800
+
+[node name="HPBar" type="TextureProgressBar" parent="."]
+offset_left = -3.0
+offset_top = -10.0
+offset_right = 3.0
+offset_bottom = -9.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_ddf2w")
+texture_over = ExtResource("5_xx30t")
+texture_progress = ExtResource("4_ddf2w")
+script = ExtResource("4_0sgwa")

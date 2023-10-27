@@ -18,7 +18,7 @@ func onHit(dmg):
 
 func onDeath():
 	queue_free()
-	
+
 func updateHPBar():
 	percentHP = int((float(currHP) / maxHP) * 100)
 	hpBar.value = percentHP
