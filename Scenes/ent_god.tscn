@@ -12,6 +12,8 @@
 radius = 8.0
 
 [node name="entGod" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 256
+collision_mask = 257
 script = ExtResource("1_wukdr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -42,6 +44,7 @@ script = ExtResource("4_0sgwa")
 script = ExtResource("7_x42li")
 shotTimer = NodePath("Timer")
 rotator = NodePath("Node2D")
+rof = 60000.0
 rotaSpeed = 0
 
 [node name="Timer" type="Timer" parent="ProjectileSpawner"]
